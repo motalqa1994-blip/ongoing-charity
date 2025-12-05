@@ -22,7 +22,7 @@ body {
     justify-content: space-between;
     align-items: center;
     /* الخلفية */
-    background-image: url('assets/background.jpg');
+    background-image: url('/ongoing-charity/assets/background.jpg')
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
