@@ -10,7 +10,7 @@ const wavesurfer = WaveSurfer.create({
     height: 100,
     responsive: true,
     hideScrollbar: true,
-    backend: 'MediaElement', // استخدام MediaElement لتجنب مشاكل فك التشفير
+    backend: 'WebAudio', // استخدام MediaElement لتجنب مشاكل فك التشفير
 });
 
 // تحميل الملف الصوتي
