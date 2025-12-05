@@ -14,7 +14,8 @@ const wavesurfer = WaveSurfer.create({
 });
 
 // تحميل الملف الصوتي
-        wavesurfer.load('https://drive.google.com/uc?export=download&id=15w3QhjxczkhJJSof7VNpo5JoxnxVErte');
+javascript
+wavesurfer.load('https://drive.google.com/uc?export=download&id=15w3QhjxczkhJJSof7VNpo5JoxnxVErte');
 // عناصر التحكم
 const playPauseBtn = document.getElementById('playPauseBtn');
 const timeDisplay = document.getElementById('time-display');
