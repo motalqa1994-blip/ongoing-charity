@@ -1,0 +1,176 @@
+/* تنسيقات عامة */
+:root {
+    --primary-color: #007bff; /* لون أزرق أساسي */
+    --secondary-color: #28a745; /* لون أخضر ثانوي */
+    --text-color: #ffffff; /* لون النص الأبيض */
+    --background-overlay: rgba(0, 0, 0, 0.6); /* طبقة شفافة سوداء للخلفية */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* الخلفية */
+    background-image: url('assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* طبقة التعتيم على الخلفية لضمان وضوح النص */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-overlay);
+    z-index: -1;
+}
+
+/* تنسيق النصوص المتحركة (Marquee Effect) */
+.moving-text-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.top-text {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.bottom-text {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.moving-text {
+    display: inline-block;
+    padding-left: 100%; /* يبدأ النص من خارج الشاشة */
+    animation: marquee 30s linear infinite; /* 30 ثانية للحركة */
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffc107; /* لون ذهبي للنصوص الدينية */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.bottom-text .moving-text {
+    font-size: 1.5rem;
+    color: #17a2b8; /* لون سماوي لنص الصدقة الجارية */
+    animation-duration: 40s; /* حركة أبطأ للنص السفلي */
+}
+
+@keyframes marquee {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); } /* يتحرك إلى اليسار */
+}
+
+/* تنسيق المحتوى الرئيسي */
+.content-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 800px;
+    margin: 100px auto; /* مسافة من الأعلى والأسفل لتجنب النصوص المتحركة */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* تنسيق مشغل الصوت */
+.audio-player-box {
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+#waveform {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.control-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.control-btn:hover {
+    background-color: #1e7e34;
+}
+
+.time-display {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* تنسيق روابط التواصل الاجتماعي */
+.social-links {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.social-links h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #ffc107;
+}
+
+.social-icon {
+    color: var(--text-color);
+    font-size: 2rem;
+    margin: 0 15px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2);
+}
